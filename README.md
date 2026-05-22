@@ -1,2 +1,2 @@
-# adas-dev-git
-adas dev repository to learn how to use git/github
+# adas-dev-logica
+adas dev repository with the exercises did on logic classes
