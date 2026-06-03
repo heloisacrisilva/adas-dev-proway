@@ -8,6 +8,8 @@
   <body>
     <h2>Exemplos Mesclando Tabelas</h2>
 
+    <h3>Mesclando colunas</h2>
+
     <table border="1">
       <tr>
         <th colspan="100%">Relatório 4º Trimestre</th>
@@ -32,6 +34,29 @@
         <td>R$39.000,00</td>
         <td>R$38.000,00</td>
       </tr>
+    </table>
+    
+    <h3>Mesclando linhas</h2>
+    <table>
+      <table border="1">
+        <tr>
+          <th>Departamento</th>
+          <th>Colaborador</th>
+        </tr>
+        <tr>
+          <td rowspan="2">Infra</td>
+          <td>Hermione</td>
+        </tr>
+        <tr>
+          <td>Malfoi</td>
+        </tr>
+        <tr>
+          <td  rowspan="2">Web Dev</td>
+          <td>Harry</td>
+        <tr>
+          <td>Drac</td>
+        </tr>
+      </table>
     </table>
   </body>
 </html>
