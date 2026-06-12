@@ -4,77 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produtos</title>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./produtos.css">
   </head>
   <body>
-    <table>
-      <tr>
-        <th>
-          <a href="./home.html" style="color: #ff1493">Home</a>
-          <a href="./sobre.html" style="color: #ff1493">Sobre</a>
-          <a href="./produtos.html" style="color: #ff1493">Produtos</a>
-          <a href="./contato.html" style="color: #ff1493">Contato</a>
-        </th>
-      </tr>
-    </table>
-
-        <h1>Produtos da Loja Geek</h1>
-    <table border="1">
-        <tr>
-            <th>Codigo</th>
-            <th>Nome</th>
-            <th>Valor</th>
-            <th>Quantidade</th>
-            <th>Imagem</th>
-            <th>Açoes</th>
-        </tr>
-        <tr>
-            <td>001</td>
-            <td>Batom</td>
-            <td>R$ 250,00</td>
-            <td>10</td>
-            <td>
-                <img src=https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCskHHml4v0NaZMVEJuYdphKzVfyKj6GAlMJ-MW0Evxs9yLOYluOvDshBUn6SjSjryVRpXF1Gu9PP8cXP9d-5crcDtoMNf7tY0zcBIVEqwNhUhMlEW0kBeYg 
-                alt="Batom"
-                width="50">
-            </td>
-            <td>
-                <button>Editar</button>
-                <button>Excluir</button>
-                <button>Detalhe</button>
-            </td>
-        </tr>
-        <tr>
-            <td>002</td>
-            <td>Base</td>
-            <td>R$ 200,00</td>
-            <td>8</td>
-            <td>
-                <img src=https://superangeloni.vtexassets.com/arquivos/ids/292459-1200-auto?v=638931276254300000&width=1200&height=auto&aspect=true
-                alt="Base"
-                width="50">
-            </td>
-            <td>
-                <button>Editar</button>
-                <button>Excluir</button>
-                <button>Detalhe</button>
-            </td>
-        </tr>
-        <tr></tr>
+    <nav>
+      <ul class="list">
+        <li class="menu"><a href="./home.html" >Home</a></li>
+        <li class="menu"><a href="./sobre.html" >Sobre</a></li>
+        <li class="menu"> <a href="./produtos.html" >Produtos</a></li>
+        <li class="menu"> <a href="./contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+        <table border="1">
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Valor (R$)</th>
+                <th>Quantidade</th>
+                <th>Imagem</th>
+                <th>Ações</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td>Batom</td>
+                <td>R$ 250,00</td>
+                <td>10</td>
+                <td class="img">
+                    <img src=https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCskHHml4v0NaZMVEJuYdphKzVfyKj6GAlMJ-MW0Evxs9yLOYluOvDshBUn6SjSjryVRpXF1Gu9PP8cXP9d-5crcDtoMNf7tY0zcBIVEqwNhUhMlEW0kBeYg 
+                    alt="Batom" width="80%" height="100"/>
+                </td>
+                <td>
+                    <button type="button">Editar</button>
+                    <button>Excluir</button>
+                    <button>Detalhes</button>
+                </td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Base</td>
+                <td>R$ 70,00</td>
+                <td>8</td>
+                <td>
+                    <img src=https://superangeloni.vtexassets.com/arquivos/ids/292459-1200-auto?v=638931276254300000&width=1200&height=auto&aspect=true
+                    alt="Base"  width="80%" height="100"/>
+                </td>
+                <td>
+                    <button>Editar</button>
+                    <button>Excluir</button>
+                    <button>Detalhes</button>
+                </td>
+            </tr>
+            <tr></tr>
             <td>003</td>
-            <td>Base</td>
+            <td>Blush</td>
             <td>R$ 99,00</td>
             <td>9</td>
             <td>
                 <img src=https://m.media-amazon.com/images/I/71TKbZHpb2L._AC_SX342_SY445_QL70_ML2_.jpg
-                alt="Base"
-                width="50">
+                alt="Blush"  width="80%" height="100"/>
             </td>
             <td>
                 <button>Editar</button>
                 <button>Excluir</button>
-                <button>Detalhe</button>
+                <button>Detalhes</button>
             </td>
         </tr>
-    </table> 
+    </table>    
+    </div>
   </body>
 </html>
