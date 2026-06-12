@@ -1,0 +1,32 @@
+* {
+    margin: 1rem;
+}
+
+body {
+  background-color: #2e2e2e;
+  padding: 1rem;
+}
+
+h1 {
+  color: #f093be;
+  font-size: 20px;
+}
+
+p {
+  background-color: #464545;
+  color: #dad9d9;
+  font-size: 13px;
+}
+
+/* Seletor por id (tem mais prioridade que por tag)*/
+
+#id {
+    color: #ca759d;
+    font-size: 13px;
+}
+
+/* Seletor por classe*/
+.seletor {
+    color: #e0d358;
+    font-size: 13px;
+}
