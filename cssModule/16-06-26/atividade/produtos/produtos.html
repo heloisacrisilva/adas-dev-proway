@@ -1,36 +1,41 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produtos</title>
-    <link rel="stylesheet" href="./home.css">
-    <link rel="stylesheet" href="./produtos.css">
+    <title>Ada's Store</title>
+    <link rel="stylesheet" href="./produtos.css" />
   </head>
   <body>
-    <nav>
-      <ul class="list">
-        <li class="menu"><a href="./home.html" >Home</a></li>
-        <li class="menu"><a href="./sobre.html" >Sobre</a></li>
-        <li class="menu"> <a href="./produtos.html" >Produtos</a></li>
-        <li class="menu"> <a href="./contato.html">Contato</a></li>
-      </ul>
-    </nav>
-    <div class="content">
-        <table border="1">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+  </body>
+  <header>
+    <h1>ADAS DEV STORE</h1>
+  </header>
+  <nav>
+      <a href="./home.html">Home</a>
+      <a href="./sobre.html">Sobre</a>
+      <a class="select" href="./produtos.html">Produtos</a>
+  </nav>
+
+  <div class="content">
+    <div class="button-box">
+      <button class="menu-button" type="button">Adicionar</button>
+      <button class="menu-button" type="button">Filtrar</button>
+    </div>
+
+    <table border="1">
             <tr>
-                <th>Código</th>
                 <th>Nome</th>
                 <th>Valor (R$)</th>
-                <th>Quantidade</th>
                 <th>Imagem</th>
                 <th>Ações</th>
             </tr>
             <tr>
-                <td>001</td>
                 <td>Batom</td>
                 <td>R$ 250,00</td>
-                <td>10</td>
                 <td class="img">
                     <img src=https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCskHHml4v0NaZMVEJuYdphKzVfyKj6GAlMJ-MW0Evxs9yLOYluOvDshBUn6SjSjryVRpXF1Gu9PP8cXP9d-5crcDtoMNf7tY0zcBIVEqwNhUhMlEW0kBeYg 
                     alt="Batom" width="80%" height="100"/>
@@ -38,14 +43,11 @@
                 <td>
                     <button type="button">Editar</button>
                     <button>Excluir</button>
-                    <button>Detalhes</button>
                 </td>
             </tr>
             <tr>
-                <td>002</td>
                 <td>Base</td>
                 <td>R$ 70,00</td>
-                <td>8</td>
                 <td>
                     <img src=https://superangeloni.vtexassets.com/arquivos/ids/292459-1200-auto?v=638931276254300000&width=1200&height=auto&aspect=true
                     alt="Base"  width="80%" height="100"/>
@@ -53,14 +55,11 @@
                 <td>
                     <button>Editar</button>
                     <button>Excluir</button>
-                    <button>Detalhes</button>
                 </td>
             </tr>
             <tr></tr>
-            <td>003</td>
             <td>Blush</td>
             <td>R$ 99,00</td>
-            <td>9</td>
             <td>
                 <img src=https://m.media-amazon.com/images/I/71TKbZHpb2L._AC_SX342_SY445_QL70_ML2_.jpg
                 alt="Blush"  width="80%" height="100"/>
@@ -68,10 +67,9 @@
             <td>
                 <button>Editar</button>
                 <button>Excluir</button>
-                <button>Detalhes</button>
             </td>
         </tr>
-    </table>    
-    </div>
-  </body>
+    </table>   
+
+  </div> 
 </html>
