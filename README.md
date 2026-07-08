@@ -57,8 +57,9 @@ Ao longo da formação, serão abordados temas como:
 
 ```bash
 📦 exercicios-fullstack-java
- ┣ 📂 logicModule
+ ┣ 📂 cssModule
  ┣ 📂 htmlModule
+ ┣ 📂 logicModule
  ┗ 📜 README.md
 ```
 
