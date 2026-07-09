@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Classes</title>
+    <style>
+      body {
+        padding: 32px;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 5px;
+        border: solid 1px gray;
+        color: gray;
+        margin-bottom: 16px;
+        &:hover {
+         border: solid 1px #c0034f;
+        }
+      }
+
+      .btn {
+        border: none;
+        background-color: pink;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #c0034f;
+          color: white;
+        }
+        &:active {
+          padding: 14px 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="email@example.com"
+      />
+    </div>
+    <div>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="digite sua senha"
+      />
+    </div>
+    <button type="submit" class="btn">Entrar</button>
+  </body>
+</html>
