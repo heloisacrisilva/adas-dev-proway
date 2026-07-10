@@ -1,0 +1,136 @@
+.content {
+  padding: 35px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.button-box {
+  width: 80% !important;
+}
+
+.btn-primary {
+  background-color: #a51c4e !important;
+  border: none !important;
+  color: white !important;
+
+  &:hover {
+    background-color: pink !important;
+    color: black !important;
+  }
+}
+
+.btn-secondary {
+  background-color: rgb(250, 212, 218) !important;
+  border: none !important;
+  color: black !important;
+
+  &:hover {
+    background-color: #b9406c !important;
+    color: white !important;
+  }
+}
+
+.bg-body-tertiary {
+  background-color: #f6e4e9 !important;
+}
+
+table {
+  width: 80% !important;
+}
+
+th {
+  text-align: center !important;
+}
+
+td {
+  text-align: center !important;
+}
+
+/* * {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  box-sizing: border-box !important;
+} */
+
+/* body {
+  background-color: #343434;
+} */
+
+/* .bg-body-tertiary {
+  background-color: rgb(255, 203, 212) !important;
+}
+
+.btn-light {
+  background-color: #f3e7a2 !important;
+  color: #303030 !important;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.navbar-brand {
+  font-weight: 500 !important;
+}
+
+th {
+  color: #f7f7f7 !important;
+  background-color: #3e3e3e !important;
+  padding: 1rem !important;
+  align-items: center !important;
+}
+
+td {
+  color: #f7f7f7 !important;
+  background-color: #3e3e3e !important;
+  padding: 1rem !important;
+  align-items: center !important;
+}
+
+button {
+  color: #303030;
+  background-color: #f3e7a2;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 0.8rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white !important;
+}
+
+.content {
+  padding: 5rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+.menu-button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f1e7b0;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a51554;
+    color: white;
+  }
+}
+
+.select {
+  text-decoration: underline;
+}
+
+.button-box {
+  display: flex;
+  gap: 1rem;
+  width: 80%;
+} */
