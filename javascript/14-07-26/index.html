@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interação</title>
+    </style>
+  </head>
+  <body>
+    <h1>Interação JavaScript x HTML</h1>
+
+    <label for="permissao">Grupo de permissão</label>
+    <input type="text" id="permissao" />
+
+    <br /><br />
+    <button onclick={validarGrupo()}>Verificar</button>
+    <button onclick={limparCampo()}>Limpar campo</button>
+
+    <script>
+      // Vínculo elemento HTML (tag) & constante
+      var input = document.getElementById('permissao')
+      
+      //Declarando uma função
+      function validarGrupo() {
+          const  inputValue = input.value
+        
+            //Testar o grupo de permissão com:
+            //Admin -> acesso permitido
+            //Compras ou Vendas -> acesso negado
+            //TI -> Acesso Master
+           switch (inputValue) {
+            case "Admin":
+                alert("Acesso permitido!")
+                console.log("Acesso permitido!")
+                break
+            case "Compras" && "Vendas":
+                alert("Acesso negado.")
+                console.log("Acesso negado.")
+                break
+            case "TI":
+                alert("Acesso master.")
+                console.log("Acesso master.")
+                break
+            default:
+                alert("Grupo não conhecido...")
+                console.log("Grupo não conhecido...")
+                break;
+           }
+        }
+
+        function limparCampo() {
+          input.value = ""
+        }
+
+    </script>
+  </body>
+</html>

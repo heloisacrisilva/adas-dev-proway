@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <h1>Condicionais em JS</h1>
+    <script>
+      //Estrutura IF ELSE
+      let idade = 55;
+
+      if (idade >= 45) {
+        console.log("idoso");
+      } else if (idade >= 18) {
+        console.log(" maior de idade");
+      } else {
+        console.log("menor de idade");
+      }
+
+      //Estrutura TERNÁRIA
+      let perfil = "Admin";
+
+      const ACESSO = perfil == "Admin" ? true : false;
+      console.log("Tem permissão? ", ACESSO);
+
+      //Estrutura SWITCH
+      const CODIGO = 1;
+      switch (CODIGO) {
+        case 1:
+          console.log("Igual a 1");
+          break;
+        case 2:
+          console.log("Igual a 2");
+          break;
+
+        default:
+          console.log("Não identificado");
+          break;
+      }
+
+      //Tipos de comparação
+
+      //Igualdade (valor): ==
+      //Idêntico (valor e tipo): ===
+      //Diferença: !=
+      //Não idêntico: "!=="
+      //Menor: < / <=
+      //Maior: > / >=
+      //Operador Lógico E: &&
+      //Operador Lógico OU: ||
+    </script>
+  </body>
+</html>
