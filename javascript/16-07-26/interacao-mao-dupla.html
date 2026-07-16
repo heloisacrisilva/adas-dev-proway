@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício</title>
+    <style>
+
+      button {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #9c0950;
+        color: white;
+        transition: 10ms;
+        &:hover {
+          background-color: #e05096;
+        }
+      }
+
+      input {
+        border: solid 1px black;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      p {
+        background-color: #f6abcf;
+        border-color: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interação mão-dupla</h1>
+    <form id="meuFormulario" action="#" method="post">
+      <label for="name">Nome: </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        required
+        placeholder="Insira o seu nome"
+      />
+      <button type="submit" onclick="userValidator()">Validar usuário</button>
+    </form>
+    <br />
+    <br />
+    <div id="validation">Aguardando validação...</div>
+
+    <script>
+      document
+        .getElementById("meuFormulario")
+        .addEventListener("submit", function (event) {
+          // Impede o formulário de recarregar a página (comportamento padrão do POST)
+          event.preventDefault();
+
+          const inputName = document.getElementById("name");
+          let name = inputName.value;
+
+          const divValidacao = document.getElementById("validation");
+          divValidacao.innerHTML = `<p>Olá ${name}, seja bem-vindo ao sistema!</p>`;
+
+          inputName.value = "";
+          inputName.focus();
+        });
+    </script>
+  </body>
+</html>
