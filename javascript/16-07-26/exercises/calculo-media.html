@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício</title>
+  </head>
+  <style>
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    h1 {
+        color: #5d0630;
+    }
+
+    button {
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      background-color: #9c0950;
+      color: white;
+      transition: 10ms;
+      &:hover {
+        background-color: #e05096;
+      }
+    }
+
+    input {
+      border: solid 1px black;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    p {
+      background-color: #f7c1db;
+      border-color: 5px;
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <h1>Média dos alunos:</h1>
+
+    <form  id="forms" action="#" method="post">
+    <div class="content">
+        <label for="nome">Aluno: </label>
+        <input type="text" placeholder="Informe o nome" id="nome" required />
+
+        <label for="name">Notas: </label>
+        <div class="notas">
+            <input type="number" id="nota1" placeholder="Nota 1" required/>
+            <input type="number" id="nota2" placeholder="Nota 2"required/>
+            <input type="number" id="nota3" placeholder="Nota 3"required />
+            <input type="number" id="nota4" placeholder="Nota 4"required/>
+        </div>
+        <button type="submit">Calcular média</button>
+        <div id="validacao"></div>
+    </div>
+    </form>
+    </div>
+
+    <script>
+        document
+            .getElementById("forms")
+            .addEventListener("submit", function (event) {
+            
+            event.preventDefault();
+            const nome = document.getElementById("nome").value;
+            const nota1 = Number(document.getElementById("nota1").value);
+            const nota2 = Number(document.getElementById("nota2").value);
+            const nota3 = Number(document.getElementById("nota3").value);
+            const nota4 = Number(document.getElementById("nota4").value);
+
+            let situacao = "";
+            let media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+            if (media >= 7) {
+            situacao = "APROVADO";
+            } else if (media >= 4) {
+            situacao = "EM RECUPERAÇAO";
+            } else {
+            situacao = "REPROVADO";
+            }
+
+            const divValidacao = document.getElementById("validacao");
+            divValidacao.innerHTML = `<p>Aluno: ${nome} - Média: ${media} - Situação: ${situacao}</p>`;
+        })
+    </script>
+  </body>
+</html>
