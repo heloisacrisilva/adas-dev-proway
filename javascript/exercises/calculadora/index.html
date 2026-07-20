@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+
+    <div class="content">
+      <h4 class="title">EXERCÍCIO 01</h4>
+      <h1>Somar dois números</h1>
+      <h4>ENUNCIADO</h4>
+      <p>
+        Crie dois campos para receber números. Ao clicar em Resolver, some os
+        valores e mostre o resultado na área abaixo.
+      </p>
+
+      <h4>SOLUÇAO:</h4>
+      <div class="contador">
+        <div class="input">
+          <span>Primeiro número</span>
+          <input id="numeroUm" type="number" placeholder="Ex: 10" />
+        </div>
+
+        <div class="input">
+          <span>Segundo número</span>
+          <input id="numeroDois" type="number" placeholder="Ex: 5" />
+        </div>
+        <button type="submit" onclick="somar()">Resolver</button>
+      </div>
+      <div class="resultado">
+        <h4 class="title">RESULTADO:</h4>
+        <p id="resultado">O resultado aparecerá aqui.</p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function somar() {
+      const inputUm = document.getElementById("numeroUm");
+      const inputDois = document.getElementById("numeroDois");
+
+      const numeroUm = Number(inputUm.value);
+      const numeroDois = Number(inputDois.value);
+
+      if (
+        inputUm.value === "" ||
+        inputDois.value === "" ||
+        isNaN(numeroUm) ||
+        isNaN(numeroDois)
+      ) {
+        return alert(
+          "Entrada inválida. Por favor, digite números válidos em ambos os campos.",
+        );
+      }
+
+      const resultado = numeroUm + numeroDois;
+      const divResultado = document.getElementById("resultado");
+      divResultado.innerHTML = ` A soma de ${numeroUm} + ${numeroDois} é ${resultado}`;
+
+      inputUm.value = "";
+      inputDois.value = "";
+    }
+  </script>
+</html>
