@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 5px;
+        font-family: "Poppins", sans-serif;
+        color: #e4e1e1;
+      }
+
+      body {
+        background-color: #2c2c2c;
+      }
+    </style>
+    <title>Funcionalidades</title>
+  </head>
+  <body>
+    <h2>Trabalhando com funcionalidades do Array</h1>
+
+    <script>
+      const lista = ["rosa",2, "lilás", true, "amarelo", "laranja", 8];
+
+      /*Laços de repetição*/
+
+      //For tradicional
+      for (let i = 0; i < lista.length; i++) {
+        if (typeof lista[i] == "string") {
+          const cor = lista[i];
+          console.log('For tradicional: ', cor)
+        }
+      }
+
+      console.log('----------------------------------')
+
+      //ForEach
+      lista.forEach((item, index) => {
+        if (typeof item == 'string') {
+            console.log('ForEach: item ',item, '- index', index)
+        }
+      })
+
+      console.log('----------------------------------')
+
+      //For Of
+      for (const item of lista) {
+        if (typeof item == 'number') {
+            console.log('For Of: ',item)
+        }
+      }
+
+      console.log('----------------------------------')
+
+      //Filter: percorre a lista e devolve ela atualizada com base no filtro
+      const listaNUmeros = lista.filter(item => typeof item == 'number')
+      console.log('Filter:',listaNUmeros)
+
+      //Map: gera uma segunda lista a partir da original
+      //Some: testa se pelo menos um dos elementos em um array passa na condição
+      //Every: testa se todos os elementos de um array passam por uma condição
+      //Find: busca um elemento dentro da lista
+
+    </script>
+  </body>
+</html>

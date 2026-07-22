@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 5px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #424141;
+      }
+
+      h1 {
+        color: #f5a3be;
+        font-weight: 600;
+      }
+
+      span {
+        font-size: 15px;
+      }
+
+      label {
+        color: #d1d1d1;
+        font-weight: 600;
+      }
+
+      input {
+        border-radius: 8px;
+        padding: 8px;
+        border: none;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background-color: #f5f0a3;
+
+        &:hover {
+          background-color: #f5a3be;
+        }
+      }
+
+      .lista {
+        margin-top: 30px;
+        border: solid 1px #f5a3be;
+        background-color: #f5a3be15;
+        border-radius: 8px;
+        padding: 10px 10px 10px 30px;
+        color: #e4e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cadastro de aluno</h1>
+
+    <form>
+      <label for="name">Nome: </label>
+      <input type="text" id="name" placeholder="insira o nome do aluno" />
+
+      <div class="buttons">
+        <button type="button" onclick="adicionarAoFim()">
+          Adicionar ao final da lista
+        </button>
+        <button type="button" onclick="adicionarAoInicio()">
+          Adicionar ao início da lista
+        </button>
+        <button type="button" onclick="removerDoFim()">
+          Remover do fim da lista
+        </button>
+        <button type="button" onclick="removerDoInicio()">
+          Remover do início da lista
+        </button>
+      </div>
+
+      <ul class="lista" id="lista"></ul>
+    </form>
+  </body>
+
+  <script>
+    const NAMEINPUT = document.getElementById("name");
+    let names = [];
+
+    function renderizar() {
+      const UL = document.getElementById("lista");
+
+      UL.innerHTML = "";
+
+      if (names.length === 0) {
+        UL.innerHTML = "<span>A lista de alunos aspanarecerá aqui...</span>";
+        return;
+      }
+
+      names.map((name) => {
+        const LI = document.createElement("li");
+        LI.textContent = name;
+        UL.appendChild(LI);
+      });
+
+      NAMEINPUT.value = "";
+      NAMEINPUT.focus();
+    }
+
+    function adicionarAoFim() {
+      const name = NAMEINPUT.value.trim();
+      if (!name) return;
+
+      names.push(name);
+      renderizar();
+    }
+
+    function adicionarAoInicio() {
+      const name = NAMEINPUT.value.trim();
+      if (!name) return;
+
+      names.unshift(name);
+      renderizar();
+    }
+
+    function removerDoFim() {
+      names.pop();
+      renderizar();
+    }
+
+    function removerDoInicio() {
+      names.shift();
+      renderizar();
+    }
+
+    renderizar();
+  </script>
+</html>

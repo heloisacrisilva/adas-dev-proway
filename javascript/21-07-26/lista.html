@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <h1>Listas no JavaScript (Vetores)</h1>
+
+    <script>
+      //Lista | Vetor | Array
+      let nomes = ["helo", "leo"];
+
+      //Transformando em string
+      nomes.toString();
+
+      //Manipulação de dados em uma lista
+
+      //Adicionar um novo elemento ao fim da lista
+      nomes.push("helo", "heitor");
+
+      //Remover do fim da lista
+      nomes.pop();
+
+      //Remove o primeiro elemento da lista
+      nomes.shift();
+
+      //Inserir no começo da lista
+      nomes.unshift("heitor");
+
+      //Capturar a posição do elemento
+      //se retornar -1 não existe na lista
+
+      //const posicao = nomes.indexOf('leo')
+      const posicao = nomes.findIndex((nome) => nome.includes("heitor"));
+      //console.log(posicao);
+      //console.log(nomes[posicao])
+
+      //Inserir um elemento em posição específica
+      nomes.splice(1, 0, "lilian");
+
+      //Alterar um elemento em posição específica
+      nomes.splice(1, 1, "kleito");
+
+      //Remover um elemento em posição específica
+      nomes.splice(1, 1);
+    </script>
+  </body>
+</html>
