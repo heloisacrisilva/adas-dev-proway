@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de produtos</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(61, 61, 61);
+        font-family: "Poppins", sans-serif;
+      }
+      .content {
+        height: 100vh;
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(255, 199, 222);
+        padding: 15px;
+        h3 {
+          color: #161616;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+
+      input {
+        width: 300px;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      button {
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 5px;
+        width: 70px;
+        background-color: rgb(255, 244, 163);
+        &:hover {
+          background-color: rgb(213, 83, 122);
+          color: #f1f1f1;
+        }
+      }
+
+      .noItens {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: #f1f1f1;
+        height: 100vh;
+        align-items: center;
+      }
+
+      .itens {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 25px 10px;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid pink;
+        border-radius: 8px;
+        padding: 15px;
+        width: 200px;
+        height: 150px;
+        color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <h3>Controle de produtos no sistema</h3>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Digite o nome do produto..."
+            id="itemInput"
+          />
+          <button onclick="adicionarItem()">Novo</button>
+        </div>
+      </header>
+
+      <div class="itens" id="itens">
+        <div class="noItens">
+          <p>Nenhum produto cadastrado ainda...</p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let items = [];
+
+    function adicionarItem() {
+      const itemInput = document.getElementById("itemInput");
+      const item = itemInput.value.trim();
+
+      if (!item) {
+        return alert('É necessário preencher o campo com o nome do produto!')
+      } 
+
+      items.unshift(item);
+      renderizarItens();
+
+      itemInput.focus();
+      itemInput.value = "";
+    }
+
+    function renderizarItens() {
+      const divItems = document.getElementById("itens");
+      divItems.innerHTML = "";
+
+      items.forEach((produto) => {
+        const novoItem = document.createElement("div");
+        novoItem.className = "item";
+        novoItem.textContent = produto;
+        divItems.appendChild(novoItem);
+      });
+    }
+  </script>
+</html>

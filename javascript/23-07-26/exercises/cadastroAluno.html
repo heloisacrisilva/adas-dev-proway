@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(52, 52, 52);
+      color: #f1f1f1;
+      padding: 10px;
+    }
+
+    h1 {
+      color: rgb(185, 222, 255);
+    }
+
+    input {
+      padding: 8px;
+      width: 15%;
+      border-radius: 8px;
+    }
+
+    .divider {
+      color: rgb(185, 222, 255);
+    }
+
+    .content {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .inputAlunoInfo {
+      width: 15%;
+    }
+
+    .notas {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .nenhumAluno {
+      margin-top: 100px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      color: rgb(182, 182, 182);
+    }
+
+    .dados {
+      color: white;
+    }
+
+    .pessoalInfo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    button {
+      padding: 8px;
+      border-radius: 8px;
+      background-color: rgb(251, 237, 174);
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(202, 230, 255);
+      }
+    }
+  </style>
+  <body>
+    <div class="content">
+      <h1>Cadastro de alunos:</h1>
+      <div class="pessoalInfo">
+        <label for="nome">Nome completo: </label>
+        <input
+          type="text"
+          placeholder="insira o nome do aluno"
+          id="nome"
+          class="inputAlunoInfo"
+        />
+
+        <label for="nome">Código de Identificação: </label>
+        <input
+          type="text"
+          placeholder="insira o código do aluno"
+          id="codigo"
+          class="inputAlunoInfo"
+        />
+      </div>
+
+      <div class="notas">
+        <label for="nome">Nota 01: </label>
+        <input type="number" placeholder="primeira nota" id="nota1" />
+
+        <label for="nome">Nota 02: </label>
+        <input type="number" placeholder="segunda nota" id="nota2" />
+
+        <label for="nome">Nota 03: </label>
+        <input type="number" placeholder="terceira nota" id="nota3" />
+
+        <button onclick="cadastrarAluno()">Cadastrar</button>
+      </div>
+      <div class="dados" id="dados">
+        <div class="nenhumAluno">
+          <p>Aguardando cadastro...</p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function cadastrarAluno() {
+      const inputNome = document.getElementById("nome");
+      const inputCodigo = document.getElementById("codigo");
+      const inputNota1 = document.getElementById("nota1");
+      const inputNota2 = document.getElementById("nota2");
+      const inputNota3 = document.getElementById("nota3");
+
+      const nome = inputNome.value;
+      const codigo = inputCodigo.value;
+      const nota1 = inputNota1.value;
+      const nota2 = inputNota2.value;
+      const nota3 = inputNota3.value;
+
+      if (!nome || !codigo || !nota1 || !nota2 || !nota3) {
+        return alert("Preencha todos os campos.");
+      }
+
+      let media = calcularMedia(Number(nota1), Number(nota2), Number(nota3));
+
+      const dadosAluno = {
+        nomeAluno: nome,
+        codAluno: codigo,
+        notas: {
+          primeiraNota: nota1,
+          segundaNota: nota2,
+          terceiraNota: nota3,
+        },
+        media: media,
+        situacao: situacao(media),
+      };
+
+      renderizarInfos(dadosAluno);
+
+      inputNome.focus();
+      inputNome.value = "";
+      inputCodigo.value = "";
+      inputNota1.value = "";
+      inputNota2.value = "";
+      inputNota3.value = "";
+    }
+
+    function situacao(media) {
+      if (media >= 7) {
+        return "APROVADO";
+      } else if (media >= 4) {
+        return "EM RECUPERAÇAO";
+      } else {
+        return "REPROVADO";
+      }
+    }
+
+    function calcularMedia(nota1, nota2, nota3) {
+      let media = nota1 + nota2 + nota3;
+      return media / 3;
+    }
+
+    function renderizarInfos(dadosAluno) {
+      console.log(dadosAluno);
+
+      const aluno = document.getElementById("dados");
+      aluno.innerHTML = `
+       <p class="divider" >-----------------------------------------------------------</p>
+      
+      <p>Nome do aluno: ${dadosAluno.nomeAluno}</p>
+      <p>Código: ${dadosAluno.codAluno}</p>
+
+      <p>Média final: ${dadosAluno.media}</p>
+      <p>Situação: ${dadosAluno.situacao}</p>
+      `;
+    }
+  </script>
+</html>
