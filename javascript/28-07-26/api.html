@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API - Rick and Morty</title>
+  </head>
+  <style>
+
+    body {
+        padding: 10px;
+        background-color: #292929;
+    }
+
+    .personagens {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        padding-top: 20px;
+        justify-content: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #f1f1f1;
+
+    }
+
+    .card {
+        border: 1px solid #433d3d;
+        background-color: #292828;
+        border-radius: 8px;
+    }
+
+    .descricao {
+        padding: 10px;
+    }
+
+    img {
+        border-radius: 8px 8px 0px 0px;
+        width: 100%;
+    }
+
+    button {
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: antiquewhite;
+
+        &:hover {
+            background-color: aliceblue;
+        }
+    }
+  </style>
+  <body>
+    <div class="content">
+        <h1>Consumindo API: Rick and Morty</h1>
+            
+        <button onclick="renderizarPersonagens()">Puxar personagens</button>
+
+        <div class="personagens" id="personagens">
+        </div>
+    </div>
+    
+    <script>
+        const APIURL = "https://rickandmortyapi.com/api/character";
+
+        //Função para buscar os dados
+        async function buscarPersonagens() {
+            const resposta = await fetch(APIURL);
+            const dadosConvertidos = await resposta.json();
+            return dadosConvertidos.results;
+        }
+
+        //Função para renderizar no HTML
+        async function renderizarPersonagens() {
+            const personagens = await buscarPersonagens();
+            
+            const divPersonagens = document.getElementById('personagens');
+            divPersonagens.innerHTML = "";
+
+            personagens.forEach(personagem => {
+                divPersonagens.innerHTML += `
+                    <div class="card">
+                        <img src="${personagem.image}" alt="${personagem.name}">
+                        <div class="descricao"> 
+                            <h3>${personagem.name}</h3>
+                            <p> ${personagem.status} - ${personagem.species} </p>
+                            <p>Localização: ${personagem.location.name} </p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+    </script>
+  </body>
+</html>
