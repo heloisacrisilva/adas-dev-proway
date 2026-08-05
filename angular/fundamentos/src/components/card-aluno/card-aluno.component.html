@@ -1,0 +1,25 @@
+<div class="card-container">
+  <div class="content">
+    <img [src]="aluno1.imageLink" width="350px" height="250px" />
+
+    <h2>{{ aluno1.name }}</h2>
+    <div class="infos">
+      <p><strong>E-mail:</strong> {{ aluno1.email }}</p>
+      <p><strong>Turma:</strong> {{ aluno1.class }}</p>
+      <p><strong>Nota final:</strong> {{ aluno1.grade }}</p>
+    </div>
+    <h3>{{ aluno1.approved }}</h3>
+  </div>
+
+  <div class="content">
+    <img [src]="aluno2.imageLink" width="350px" height="250px" />
+
+    <h2>{{ aluno2.name }}</h2>
+    <div class="infos">
+      <p><strong>E-mail:</strong> {{ aluno2.email }}</p>
+      <p><strong>Turma:</strong> {{ aluno2.class }}</p>
+      <p><strong>Nota final:</strong> {{ aluno2.grade }}</p>
+    </div>
+    <h3>{{ aluno2.approved }}</h3>
+  </div>
+</div>
