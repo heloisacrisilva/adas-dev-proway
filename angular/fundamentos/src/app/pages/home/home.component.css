@@ -1,0 +1,21 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 35px;
+  height: 100vh;
+  background-color: #4b4a4a;
+
+  h3 {
+    margin: 0;
+    color: #e0e0e0;
+    font-weight: 400;
+  }
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

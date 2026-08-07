@@ -1,5 +1,8 @@
-<h2>{{ title }}</h2>
+<div class="home-container">
+  <h3>{{ title }}</h3>
 
-<div class="card-container">
-  <app-card-aluno></app-card-aluno>
+  <div class="cards-container">
+    <app-card-aluno [aluno]="aluno1"></app-card-aluno>
+    <app-card-aluno [aluno]="aluno2"></app-card-aluno>
+  </div>
 </div>
