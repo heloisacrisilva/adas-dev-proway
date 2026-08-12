@@ -8,6 +8,10 @@
       <p><strong>Turma:</strong> {{ aluno.class }}</p>
       <p><strong>Nota final:</strong> {{ aluno.grade }}</p>
     </div>
-    <h4>{{ aluno.status }}</h4>
+    <div [ngClass]="{ aprovado: aluno.status === 'APROVADO', reprovado: aluno.status === 'REPROVADO'}">
+      <h4 class="status">
+        {{ aluno.status }}
+      </h4>
+    </div>
   </div>
 </div>

@@ -1,8 +1,16 @@
 <div class="home-container">
+  <!--Criar uma tabela abaixo da div cards-->
   <h3>{{ title }}</h3>
 
-  <div class="cards-container">
-    <app-card-aluno [aluno]="aluno1"></app-card-aluno>
-    <app-card-aluno [aluno]="aluno2"></app-card-aluno>
+  @if (alunos.length === 0) {
+  <div class="no-content">
+    <p>Nenhum aluno cadastrado...</p>
   </div>
+  } @else {
+  <div class="cards-container">
+    @for (aluno of alunos; track $index) {
+    <app-card-aluno [aluno]="aluno"></app-card-aluno>
+    }
+  </div>
+  }
 </div>

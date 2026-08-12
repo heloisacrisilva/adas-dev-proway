@@ -7,16 +7,29 @@ img {
   border-radius: 8px 8px 0 0;
   object-fit: cover;
 }
-h4 {
-  margin-bottom: 5px;
-  color: #ffff;
-}
 
 h3 {
   margin: 8px;
   color: #ffff;
 }
 
+.reprovado {
+  color: #ffff;
+  text-align: center;
+  background-color: #c45d5d;
+  width: 100%;
+  padding: 5px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.aprovado {
+  color: #ffff;
+  text-align: center;
+  background-color: #6db382;
+  width: 100%;
+  padding: 5px;
+  border-radius: 0px 0px 8px 8px;
+}
 .content {
   border: 1px solid #353535;
   border-radius: 8px;
