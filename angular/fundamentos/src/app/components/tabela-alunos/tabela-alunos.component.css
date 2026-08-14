@@ -1,0 +1,30 @@
+.tabela-alunos {
+  width: 100%;
+  margin-top: 1rem;
+  background: #c0c0c0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela-alunos th,
+.tabela-alunos td {
+  padding: 0.7rem; 
+  border-bottom: 1px solid #d6d6d6;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.tabela-alunos th {
+  background: #8a8989;
+  font-weight: 600;
+}
+
+.reprovado {
+  color: #6e2121;
+}
+
+.aprovado {
+  color: #086624;
+}

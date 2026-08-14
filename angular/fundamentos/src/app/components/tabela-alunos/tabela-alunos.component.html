@@ -1,0 +1,30 @@
+<div class="tabela-alunos-container">
+  @if (alunos.length === 0) {
+    <p>Nenhum aluno cadastrado...</p>
+  } @else {
+    <table class="tabela-alunos">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Turma</th>
+          <th>Nota</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (aluno of alunos; track $index) {
+          <tr>
+            <td>{{ aluno.name }}</td>
+            <td>{{ aluno.email }}</td>
+            <td>{{ aluno.class }}</td>
+            <td>{{ aluno.grade }}</td>
+            <td [ngClass]="aluno.status === 'APROVADO' ? 'aprovado' : 'reprovado'">
+              {{ aluno.status }}
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

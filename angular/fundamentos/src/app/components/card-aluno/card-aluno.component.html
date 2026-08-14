@@ -8,7 +8,7 @@
       <p><strong>Turma:</strong> {{ aluno.class }}</p>
       <p><strong>Nota final:</strong> {{ aluno.grade }}</p>
     </div>
-    <div [ngClass]="{ aprovado: aluno.status === 'APROVADO', reprovado: aluno.status === 'REPROVADO'}">
+    <div [ngClass]="aluno.status === 'APROVADO' ? 'aprovado' : 'reprovado'">
       <h4 class="status">
         {{ aluno.status }}
       </h4>

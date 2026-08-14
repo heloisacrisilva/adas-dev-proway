@@ -1,16 +1,33 @@
 <div class="home-container">
-  <!--Criar uma tabela abaixo da div cards-->
-  <h3>{{ title }}</h3>
+  <h3>Lista de Alunos</h3>
 
-  @if (alunos.length === 0) {
-  <div class="no-content">
-    <p>Nenhum aluno cadastrado...</p>
-  </div>
+  @if (alunosFiltrados.length === 0) {
+    <div class="no-content">
+      <p>Nenhum aluno cadastrado...</p>
+    </div>
   } @else {
-  <div class="cards-container">
-    @for (aluno of alunos; track $index) {
-    <app-card-aluno [aluno]="aluno"></app-card-aluno>
+    <div class="buttons-container">
+      <div class="buttons">
+        <button (click)="modoExibicao = 'cards'">Exibir em Cards</button>
+        <button (click)="modoExibicao = 'tabela'">Exibir em Tabela</button>
+      </div>
+
+      <div class="filters">
+        <span>Filtrar por:</span>
+        <button (click)="aplicarFiltro('TODOS')">Todos</button>
+        <button (click)="aplicarFiltro('APROVADOS')">Aprovados</button>
+        <button (click)="aplicarFiltro('REPROVADOS')">Reprovados</button>
+      </div>
+    </div>
+
+    @if (modoExibicao === "cards") {
+      <div class="cards-container">
+        @for (aluno of alunosFiltrados; track $index) {
+          <app-card-aluno [aluno]="aluno"></app-card-aluno>
+        }
+      </div>
+    } @else {
+      <app-tabela-alunos [alunos]="alunosFiltrados"></app-tabela-alunos>
     }
-  </div>
   }
 </div>
