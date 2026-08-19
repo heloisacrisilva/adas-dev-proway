@@ -67,7 +67,23 @@ button {
     background-color: #ddcbcf;
     color: #292929;
   }
+
 }
+
+.filtersButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e0b9c2;
+  color: #292929;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #868585;
+    color: #fffefe;
+  }
+}
+.filters
 
 span {
   color: #cfcfcf;

@@ -8,15 +8,14 @@
   } @else {
     <div class="buttons-container">
       <div class="buttons">
-        <button (click)="modoExibicao = 'cards'">Exibir em Cards</button>
-        <button (click)="modoExibicao = 'tabela'">Exibir em Tabela</button>
+        <button (click)="trocarVisualicacao()">{{modoExibicao === 'cards' ? 'Ver por Tabela' : 'Ver por Card'}}</button>
       </div>
 
       <div class="filters">
         <span>Filtrar por:</span>
-        <button (click)="aplicarFiltro('TODOS')">Todos</button>
-        <button (click)="aplicarFiltro('APROVADOS')">Aprovados</button>
-        <button (click)="aplicarFiltro('REPROVADOS')">Reprovados</button>
+        <button class="filtersButton" (click)="aplicarFiltro('TODOS')">Todos</button>
+        <button class="filtersButton" (click)="aplicarFiltro('APROVADOS')">Aprovados</button>
+        <button class="filtersButton" (click)="aplicarFiltro('REPROVADOS')">Reprovados</button>
       </div>
     </div>
 

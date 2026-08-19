@@ -19,8 +19,8 @@ export class HomeComponent {
       name: 'Heloisa C. da Silva',
       email: 'heloisa@mail.com',
       class: 'Adas Dev 8',
-      grade: 8,
-      status: GradeVerify(8),
+      grade: 9,
+      status: GradeVerify(9),
       imageLink:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEg6_hCRC5eERNRa0IKABVYgkvXSMGER60dIDeYnTILgRVc0eZUTmslog&s=10',
     },
@@ -28,10 +28,19 @@ export class HomeComponent {
       name: 'Leonardo Marchioro',
       email: 'leonardo@mail.com',
       class: 'ADS',
+      grade: 9,
+      status: GradeVerify(9),
+      imageLink:
+        'https://comicvine.gamespot.com/a/uploads/square_small/6/66303/4469088-tumblr_inline_n0aleph3fl1r8rr6o.jpg',
+    },
+    {
+      name: 'Fulano Beltrano',
+      email: 'fulano@mail.com',
+      class: 'Marketing',
       grade: 4,
       status: GradeVerify(4),
       imageLink:
-        'https://comicvine.gamespot.com/a/uploads/square_small/6/66303/4469088-tumblr_inline_n0aleph3fl1r8rr6o.jpg',
+        'https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest?cb=20250817060829',
     },
   ];
 
@@ -51,5 +60,15 @@ export class HomeComponent {
     }
 
     this.alunosFiltrados = this.alunos.filter((aluno) => aluno.status === 'REPROVADO');
+  }
+
+  trocarVisualicacao(): void {
+    if (this.modoExibicao === 'cards') {
+      this.modoExibicao = 'tabela'
+      return
+    } else {
+      this.modoExibicao = 'cards'
+      return
+    }
   }
 }
