@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardAlunoComponent } from '../../components/card-aluno/card-aluno.component';
 import { TabelaAlunosComponent } from '../../components/tabela-alunos/tabela-alunos.component';
 import { GradeVerify } from '../../../utils/utils';
 import { Aluno } from '../../interfaces/aluno';
+import { AlunoService } from '../../services/aluno.service';
 
 @Component({
   selector: 'app-home',
@@ -11,64 +12,42 @@ import { Aluno } from '../../interfaces/aluno';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+
+  private readonly alunoService = inject(AlunoService)
+
   modoExibicao: string = 'cards';
   filtroAtual: string = 'TODOS';
 
-  alunos: Aluno[] = [
-    {
-      name: 'Heloisa C. da Silva',
-      email: 'heloisa@mail.com',
-      class: 'Adas Dev 8',
-      grade: 9,
-      status: GradeVerify(9),
-      imageLink:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEg6_hCRC5eERNRa0IKABVYgkvXSMGER60dIDeYnTILgRVc0eZUTmslog&s=10',
-    },
-    {
-      name: 'Leonardo Marchioro',
-      email: 'leonardo@mail.com',
-      class: 'ADS',
-      grade: 9,
-      status: GradeVerify(9),
-      imageLink:
-        'https://comicvine.gamespot.com/a/uploads/square_small/6/66303/4469088-tumblr_inline_n0aleph3fl1r8rr6o.jpg',
-    },
-    {
-      name: 'Fulano Beltrano',
-      email: 'fulano@mail.com',
-      class: 'Marketing',
-      grade: 4,
-      status: GradeVerify(4),
-      imageLink:
-        'https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest?cb=20250817060829',
-    },
-  ];
+  alunosFiltrados: Aluno[] = []
 
-  alunosFiltrados: Aluno[] = this.alunos;
-
-  aplicarFiltro(filtro: string) {
-    this.filtroAtual = filtro;
-
-    if (filtro === 'TODOS') {
-      this.alunosFiltrados = this.alunos;
-      return;
-    }
-
-    if (filtro === 'APROVADOS') {
-      this.alunosFiltrados = this.alunos.filter((aluno) => aluno.status === 'APROVADO');
-      return;
-    }
-
-    this.alunosFiltrados = this.alunos.filter((aluno) => aluno.status === 'REPROVADO');
+  //Chamada sempre que o componente é montado
+  ngOnInit(): void {
+    this.alunosFiltrados = this.alunoService.listar()
   }
 
-  trocarVisualicacao(): void {
-    if (this.modoExibicao === 'cards') {
-      this.modoExibicao = 'tabela'
-      return
-    } else {
-      this.modoExibicao = 'cards'
-      return
-    }
-  }
+  // aplicarFiltro(filtro: string) {
+  //   this.filtroAtual = filtro;
+
+  //   if (filtro === 'TODOS') {
+  //     this.alunosFiltrados = this.alunos;
+  //     return;
+  //   }
+
+  //   if (filtro === 'APROVADOS') {
+  //     this.alunosFiltrados = this.alunos.filter((aluno) => aluno.status === 'APROVADO');
+  //     return;
+  //   }
+
+  //   this.alunosFiltrados = this.alunos.filter((aluno) => aluno.status === 'REPROVADO');
+  // }
+
+  // trocarVisualicacao(): void {
+  //   if (this.modoExibicao === 'cards') {
+  //     this.modoExibicao = 'tabela'
+  //     return
+  //   } else {
+  //     this.modoExibicao = 'cards'
+  //     return
+  //   }
+  // }
 }
