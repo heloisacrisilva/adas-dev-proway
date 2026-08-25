@@ -3,12 +3,14 @@ import { Aluno } from '../interfaces/aluno';
 import { GradeVerify } from '../../utils/utils';
 
 //Engloba toda a lógica relaciona a alunos
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlunoService {
-  alunos: Aluno[] = [
+  modoExibicao: 'cards' | 'tabela' = 'cards';
+  filtroAtual: 'TODOS' | 'APROVADOS' | 'REPROVADOS' = 'TODOS';
+  alunosFiltrados: Aluno[] = [];
+  private alunos: Aluno[] = [
     {
       name: 'Heloisa C. da Silva',
       email: 'heloisa@mail.com',
@@ -38,8 +40,26 @@ export class AlunoService {
     },
   ];
 
-
   listar(): Aluno[] {
-    return this.alunos
+    return this.alunos;
+  }
+
+  aplicarFiltro(filtro: 'TODOS' | 'APROVADOS' | 'REPROVADOS'): void {
+    this.filtroAtual = filtro;
+
+    if (filtro === 'TODOS') {
+      this.alunosFiltrados = this.alunos;
+      return
+    }
+
+    const status = filtro === 'APROVADOS' ? 'APROVADO' : 'REPROVADO';
+
+    this.alunosFiltrados = this.alunos.filter(
+      (aluno) => aluno.status === status,
+    );
+  }
+
+  trocarVisualicacao(): void {
+    this.modoExibicao = this.modoExibicao === 'cards' ? 'tabela' : 'cards';
   }
 }
