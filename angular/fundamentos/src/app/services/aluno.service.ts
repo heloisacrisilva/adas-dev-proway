@@ -13,6 +13,7 @@ export class AlunoService {
   private alunos: Aluno[] = [
     {
       name: 'Heloisa C. da Silva',
+      idade: 21,
       email: 'heloisa@mail.com',
       class: 'Adas Dev 8',
       grade: 9,
@@ -22,6 +23,7 @@ export class AlunoService {
     },
     {
       name: 'Leonardo Marchioro',
+      idade: 24,
       email: 'leonardo@mail.com',
       class: 'ADS',
       grade: 9,
@@ -31,6 +33,7 @@ export class AlunoService {
     },
     {
       name: 'Fulano Beltrano',
+      idade: 15,
       email: 'fulano@mail.com',
       class: 'Marketing',
       grade: 4,
@@ -49,7 +52,7 @@ export class AlunoService {
 
     if (filtro === 'TODOS') {
       this.alunosFiltrados = this.alunos;
-      return
+      return;
     }
 
     const status = filtro === 'APROVADOS' ? 'APROVADO' : 'REPROVADO';
@@ -61,5 +64,21 @@ export class AlunoService {
 
   trocarVisualicacao(): void {
     this.modoExibicao = this.modoExibicao === 'cards' ? 'tabela' : 'cards';
+  }
+
+  quantidadeAlunos(): number {
+    return this.alunos.length;
+  }
+
+  quantidadeAprovados(): number {
+    return this.alunos.filter((aluno) => aluno.status === 'APROVADO').length;
+  }
+
+  quantidadeReprovados(): number {
+    return this.alunos.filter((aluno) => aluno.status === 'REPROVADO').length;
+  }
+
+  maioresDeIdade(): number {
+    return this.alunos.filter((aluno) => aluno.idade >= 18).length;
   }
 }

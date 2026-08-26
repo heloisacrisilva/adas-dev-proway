@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  gap: 60px;
+}
+
+.card {
+  border: 1px solid #454545;
+  background-color: #555454;
+  padding: 40px 90px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 40px;
+  color: #edc1d0;
+}
+
+span {
+  font-size: 20px;
+  color: #f3f3f3;
+}

@@ -3,10 +3,11 @@ import { CardAlunoComponent } from '../../components/card-aluno/card-aluno.compo
 import { TabelaAlunosComponent } from '../../components/tabela-alunos/tabela-alunos.component';
 import { AlunoService } from '../../services/aluno.service';
 import { Aluno } from '../../interfaces/aluno';
+import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CardAlunoComponent, TabelaAlunosComponent],
+  imports: [CardAlunoComponent, TabelaAlunosComponent, DashboardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

@@ -5,4 +5,5 @@ export interface Aluno {
   grade: number;
   status: string;
   imageLink?: string;
+  idade: number
 }
