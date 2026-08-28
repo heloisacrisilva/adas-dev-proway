@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Aluno } from '../../interfaces/aluno';
-import { NgClass } from "../../../../node_modules/@angular/common"; 
+import { NgClass } from "../../../../node_modules/@angular/common";
 
 @Component({
   selector: 'app-tabela-alunos',
@@ -10,4 +10,9 @@ import { NgClass } from "../../../../node_modules/@angular/common";
 })
 export class TabelaAlunosComponent {
   @Input() alunos: Aluno[] = [];
+
+  @Output() excluir = new EventEmitter<number>();
+
+
+  //Implementar exclusão de aluno
 }

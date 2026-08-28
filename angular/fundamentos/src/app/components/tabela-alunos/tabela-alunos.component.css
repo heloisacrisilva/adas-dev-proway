@@ -11,7 +11,7 @@
 
 .tabela-alunos th,
 .tabela-alunos td {
-  padding: 0.7rem; 
+  padding: 0.7rem;
   border-bottom: 1px solid #d6d6d6;
   text-align: left;
   line-height: 1.2;
@@ -28,4 +28,19 @@
 
 .aprovado {
   color: #086624;
+}
+
+button {
+  border: solid 1px #bb5f6e;
+  background-color: #bb5f6e3b;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  color: #222222;
+
+  &:hover {
+    border: solid 1px #ffc0cb3d;
+    background-color: #bb5f6e;
+    color: #ffff;
+  }
 }
