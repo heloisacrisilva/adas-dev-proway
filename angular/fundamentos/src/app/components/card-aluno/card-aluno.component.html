@@ -7,7 +7,11 @@
       <p><strong>E-mail:</strong> {{ aluno.email }}</p>
       <p><strong>Turma:</strong> {{ aluno.class }}</p>
       <p><strong>Nota final:</strong> {{ aluno.grade }}</p>
+
+      <button (click)="onExcluir()">Excluir</button>
     </div>
+
+
     <div [ngClass]="aluno.status === 'APROVADO' ? 'aprovado' : 'reprovado'">
       <h4 class="status">
         {{ aluno.status }}

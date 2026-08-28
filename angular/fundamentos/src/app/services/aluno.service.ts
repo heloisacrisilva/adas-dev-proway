@@ -12,6 +12,7 @@ export class AlunoService {
   alunosFiltrados: Aluno[] = [];
   private alunos: Aluno[] = [
     {
+      cod: 1,
       name: 'Heloisa C. da Silva',
       idade: 21,
       email: 'heloisa@mail.com',
@@ -22,6 +23,7 @@ export class AlunoService {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEg6_hCRC5eERNRa0IKABVYgkvXSMGER60dIDeYnTILgRVc0eZUTmslog&s=10',
     },
     {
+      cod: 2,
       name: 'Leonardo Marchioro',
       idade: 24,
       email: 'leonardo@mail.com',
@@ -32,6 +34,7 @@ export class AlunoService {
         'https://comicvine.gamespot.com/a/uploads/square_small/6/66303/4469088-tumblr_inline_n0aleph3fl1r8rr6o.jpg',
     },
     {
+      cod: 3,
       name: 'Fulano Beltrano',
       idade: 15,
       email: 'fulano@mail.com',
@@ -80,5 +83,9 @@ export class AlunoService {
 
   maioresDeIdade(): number {
     return this.alunos.filter((aluno) => aluno.idade >= 18).length;
+  }
+
+  excluirAluno(cod: number): void {
+    this.alunos = this.alunos.filter(aluno => aluno.cod !== cod)
   }
 }

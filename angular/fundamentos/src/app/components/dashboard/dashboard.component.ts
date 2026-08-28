@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { AlunoService } from '../../services/aluno.service';
+import { Aluno } from '../../interfaces/aluno';
 
 @Component({
   selector: 'app-dashboard',

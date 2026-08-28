@@ -23,6 +23,10 @@ export class HomeComponent {
 
   //Função do Angular que é executada sempre que a página é carregada
   ngOnInit(): void {
+    this.carregarAlunos()
+  }
+
+  carregarAlunos(): void {
     this.alunoService.alunosFiltrados = this.alunoService.listar();
   }
 
@@ -32,5 +36,15 @@ export class HomeComponent {
 
   trocarVisualicacao(): void {
     this.alunoService.trocarVisualicacao();
+  }
+
+  onExcluir(cod: number): void {
+    const confirmExclusao: boolean = confirm(`Tem certeza que deseja excluir este aluno: ID ${cod}?`)
+
+    if (confirmExclusao) {
+      this.alunoService.excluirAluno(cod)
+      this.carregarAlunos()
+    }
+
   }
 }
