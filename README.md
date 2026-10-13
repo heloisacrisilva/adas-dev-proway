@@ -57,10 +57,11 @@ Ao longo da formação, serão abordados temas como:
 
 ```bash
 📦 exercicios-fullstack-java
- ┣ 📂 angular
+ ┣ 📂 angularModule
  ┣ 📂 bootsrapModule
  ┣ 📂 cssModule
  ┣ 📂 htmlModule
+ ┣ 📂 javaModule
  ┣ 📂 javascriptModule
  ┣ 📂 logicModule
  ┗ 📜 README.md
