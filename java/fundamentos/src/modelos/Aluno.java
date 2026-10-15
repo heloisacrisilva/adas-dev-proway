@@ -9,16 +9,32 @@ public class Aluno {
     public String matricula;
     public boolean status;
 
-    // Declarar os Construtores
 
-    // Construtor vazio (sem parâmetros)
+    // Declarar os Construtores
     public Aluno () {
-        //Declaramos por boas práticas
+
     }
 
     public Aluno (String nome) {
         this.nome = nome;
     }
 
-}
+    public Aluno (String nomeParametro, int idadeParametro) {
+        this.nome = nomeParametro;
+        this.idade = idadeParametro;
+    }
 
+
+    // Declarar métodos específicos da classe
+    public void exibirDados () {
+        System.out.println("***********************************");
+        System.out.println("     D A D O S  D O  A L U N O     ");
+        System.out.println("***********************************");
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("Matricula: " + this.matricula);
+    }
+
+
+}
