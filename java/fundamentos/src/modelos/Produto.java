@@ -5,8 +5,9 @@ public class Produto {
     //Atributos ou Propriedades;
     private String codigo;
     private String nome;
-    private double valor;
-    private boolean cadastroAtivo;
+    private double preco;
+    private int quantidade;
+    private Categoria categoria;
 
     //Construtor vazio (boa prática)
     public Produto () {
@@ -17,46 +18,69 @@ public class Produto {
     public Produto (String codParam, String nomeParam, double valorParam) {
         this.codigo = codParam;
         this.nome = nomeParam;
-        this.valor = valorParam;
-        this.cadastroAtivo = true;
     }
 
     //ENCAPSULAMENTO (Métodos de acesso)
 
-    //GET
     public String getCodigo() {
-        return this.codigo;
+        return codigo;
     }
 
-    public String getNome() {
-        return this.nome;
-    }
-
-    public double getValor() {
-        return this.valor;
-    }
-
-    public boolean getCadastroAtivo() {
-        return this.cadastroAtivo;
-    }
-
-    //SET
-    public void setCodigo (String codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    public void setNome (String nome) {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setValor (double valor) {
-        this.valor = valor;
+    public double getValor() {
+        return preco;
     }
 
-    public void setCadastroAtivo (boolean cadastroAtivo) {
-        this.cadastroAtivo = cadastroAtivo;
+    public void setValor(double valor) {
+        this.preco = valor;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void exibirSDados() {
+        System.out.println(" ");
+        System.out.println("--------------------------------");
+        System.out.println("Código: " + this.codigo);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Preço: R$" + this.preco);
+        System.out.println("Quantidade:" + this.quantidade);
+        System.out.println("Categoria: " + this.categoria.getNome());
+        System.out.println("--------------------------------");
+    }
+
+    public void exibirValorEstoque() {
+        double valorEstoque = this.quantidade * this.preco;
+        System.out.println("O valor do estoque está em: R$" + valorEstoque);
+    }
+
+    public void trocarCategoria(Categoria novaCategoria) {
+        this.categoria = novaCategoria;
+    }
 }
 
 
