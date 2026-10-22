@@ -1,20 +1,25 @@
-import modelos.Categoria;
+import relacionamento.Categoria;
 import modelos.Produto;
 
 public class ProdutoMain {
     public static void main(String[] args) {
-        Produto produto1 = new Produto("PW-001", "Macbook Pro M1", 10500);
 
-        //Forma correta de pegar valor da propriedade
-//        System.out.println("Nome do produto: " + produto1.getNome());
+        //Instanciando objetos da classe Categoria
+        Categoria categoria1 = new Categoria(1, "Comida", true);
+        Categoria categoria2 = new Categoria(2, "Bebida", true);
+        Categoria categoria3 = new Categoria(3, "Sobremesa", true);
 
-        Categoria categoria1 = new Categoria(123, "Beleza", true);
-        //Forma correta de enviar valor da propriedade
-        produto1.setCategoria(categoria1);
+        //Instanciando objetos da classe Produto
+        Produto produto1 = new Produto(101, categoria1, 15, 39.90, "Hamburger");
+        Produto produto2 = new Produto(102, categoria2, 50, 9.90, "Coca Cola Zero");
+        Produto produto3 = new Produto(103, categoria3, 10, 25.90, "Cookie Chocolate");
+
         produto1.exibirSDados();
+        produto1.getCategoria().mudarStatus(false);
+        produto1.getCategoria().exibirSDados();
+        produto3.trocarCategoria(categoria3);
 
-        Categoria categoria2 = new Categoria(123, "Eletrônico", true);
-        produto1.trocarCategoria(categoria2);
-        produto1.exibirSDados();
+
+
     }
 }

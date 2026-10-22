@@ -1,4 +1,4 @@
-package modelos;
+package relacionamento;
 
 public class Categoria {
     private int codigo;
@@ -41,8 +41,7 @@ public class Categoria {
     }
 
     public void exibirSDados() {
-        System.out.println(" ");
-        System.out.println("--------------------------------");
+        System.out.println("----- Dados da Categoria -----");
         System.out.println("Código: " + this.codigo);
         System.out.println("Nome: " + this.nome);
         System.out.println("Status: " + this.status);
@@ -50,6 +49,8 @@ public class Categoria {
     }
 
     public void mudarStatus(boolean novoStatus) {
+
         this.status = novoStatus;
+        System.out.println("Status de " + this.nome + " alterado com sucesso!");
     }
 }

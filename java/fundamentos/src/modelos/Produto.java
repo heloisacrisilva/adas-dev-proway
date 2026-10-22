@@ -1,9 +1,11 @@
 package modelos;
 
+import relacionamento.Categoria;
+
 public class Produto {
 
     //Atributos ou Propriedades;
-    private String codigo;
+    private int codigo;
     private String nome;
     private double preco;
     private int quantidade;
@@ -15,18 +17,21 @@ public class Produto {
     }
 
     //Construtor com parâmetros
-    public Produto (String codParam, String nomeParam, double valorParam) {
-        this.codigo = codParam;
-        this.nome = nomeParam;
+    public Produto(int codigo, Categoria categoria, int quantidade, double preco, String nome) {
+        this.codigo = codigo;
+        this.categoria = categoria;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.nome = nome;
     }
 
     //ENCAPSULAMENTO (Métodos de acesso)
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -55,7 +60,7 @@ public class Produto {
     }
 
     public Categoria getCategoria() {
-        return categoria;
+        return this.categoria;
     }
 
     public void setCategoria(Categoria categoria) {
@@ -63,8 +68,7 @@ public class Produto {
     }
 
     public void exibirSDados() {
-        System.out.println(" ");
-        System.out.println("--------------------------------");
+        System.out.println("------ Dados do Produto -------");
         System.out.println("Código: " + this.codigo);
         System.out.println("Nome: " + this.nome);
         System.out.println("Preço: R$" + this.preco);
@@ -79,7 +83,16 @@ public class Produto {
     }
 
     public void trocarCategoria(Categoria novaCategoria) {
-        this.categoria = novaCategoria;
+        if (novaCategoria.isStatus()) {
+            if (this.categoria.getCodigo() == novaCategoria.getCodigo()) {
+                System.out.println("Essa categoria já está atribuída para " + this.nome);
+            } else {
+                this.categoria = novaCategoria;
+                System.out.println("Categoria atuaizada com sucesso!");
+            }
+        } else {
+            System.out.println("Essa categoria não está ativa no momento...");
+        }
     }
 }
 
