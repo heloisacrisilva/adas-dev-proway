@@ -48,11 +48,17 @@ public class Filme {
         this.assistido = assistido;
     }
 
-    public void cadastrarFilme(int codigoParam, String tituloParam, String generoParam) {
-        this.codigo = codigoParam;
-        this.titulo = tituloParam;
-        this.genero = generoParam;
-        this.assistido = false;
+    public void marcarNaoAssistido() {
+        this.setAssistido(false);
+    }
+
+    public void marcarAssistido() {
+        this.setAssistido(true);
+    }
+
+    public void editarDados(String newTitulo, String newGenero) {
+       this.setTitulo(newTitulo);
+       this.setGenero(newGenero);
     }
 
 }
