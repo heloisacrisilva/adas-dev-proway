@@ -1,4 +1,4 @@
-package modelos;
+package modelos.Filmes;
 
 public class Filme {
     private int codigo;

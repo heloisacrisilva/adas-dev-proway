@@ -1,4 +1,4 @@
-import modelos.CatalogoFilmes;
+import modelos.Filmes.CatalogoFilmes;
 
 import java.util.Scanner;
 

@@ -1,5 +1,5 @@
 
-package modelos;
+package modelos.Filmes;
 
 import java.util.ArrayList;
 import java.util.List;
